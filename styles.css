@@ -1,46 +1,47 @@
 body {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: #333;
+  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/920291799814489862/00570B8E78DB29298BF1094009A9EEA41B320A23/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   min-height: 100vh;
+  background-color: blanchedalmond;
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .weather-card {
-  background: #f9f9f9;
+  background: #222222;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.form-control {
-  border-radius: 25px;
-  padding: 20px 15px;
-  font-size: 1.2rem;
-}
-
-.btn-primary {
-  border-radius: 25px;
-  font-size: 1.2rem;
 }
 
 .card-title {
   font-size: 1.5rem;
   font-weight: bold;
+  color: black;
+  -webkit-text-stroke: 1px rgb(255, 9, 9);
+  text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff,
+    -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 
-.result-card {
-  margin-top: 20px;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.form-control {
+  border-radius: 15px;
+  padding: 20px 15px;
+  font-size: 1.2rem;
 }
 
-.result-card h5 {
+.btn-primary {
+  background-color: red;
+  border-color: white;
+  border-radius: 25px;
+  font-size: 1.2rem;
+}
+
+.btn-primary:hover {
+  background-color: red;
+  border-color: white;
   font-weight: bold;
-  color: #333;
-}
-
-.result-card p {
-  color: #555;
+  -webkit-text-stroke: 1px black;
+  box-shadow: 3px 3px 3px white;
 }

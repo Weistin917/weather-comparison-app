@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather App</title>
     <link
       rel="stylesheet"
@@ -12,33 +13,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c8b845ab13.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
       <div class="card weather-card p-4">
         <div class="text-center mb-4">
-          <h2 class="text-primary">
+          <h2 class="card-title">
             <i class="fas fa-cloud-sun"></i> Weather App
           </h2>
-          <p>Get the current weather for any city.</p>
+          <p>Get the current weather of any city.</p>
         </div>
-        <form id="weatherForm">
+        <form id="weather-form">
           <div class="form-group position-relative">
             <input
               type="text"
-              id="cityInput"
+              id="citiesInput"
               class="form-control"
-              placeholder="Enter a city (e.g., New York)"
+              placeholder="Enter cities' names separated by comma (e.g. Taipei, Guatemala, ...)"
               required
             />
             <i
-              class="fas fa-city position-absolute"
+              class="fa-solid fa-mountain-city position-absolute"
               style="
                 top: 50%;
                 right: 20px;
                 transform: translateY(-50%);
-                color: #888;
+                color: rgb(65, 65, 65);
               "
             ></i>
           </div>
