@@ -1,13 +1,16 @@
 const form = document.getElementById("weather-form");
 const resultDiv = document.getElementById("weatherResult");
+const chart = document.getElementById("barChart");
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const inputs = document.getElementById("citiesInput").value.split(',');
     const cities = [];
+    const dataset = [];
     inputs.forEach((city) => cities.push(city.trim()));
     resultDiv.innerHTML = "";
+    chart.innerHTML = "";
 
     if (!cities) {
         resultDiv.innerHTML = `<div class="alert alert-danger">Please enter a city name.</div>`;
@@ -25,6 +28,7 @@ form.addEventListener("submit", async (event) => {
             }
 
             const data = await response.json();
+            dataset.push(data);
             
             resultDiv.innerHTML += `
             <div class="card result-card p-3">
@@ -37,6 +41,28 @@ form.addEventListener("submit", async (event) => {
             </div>
             `;
         }
+        
+        chart.innerHTML = '<canvas id="weatherChart"></canvas>'
+        new Chart(document.getElementById("weatherChart"), {
+            type: 'bar',
+            data: {
+                labels: dataset.map(data => data.name),
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: dataset.map(data => data.main.temp),
+                    borderWidth: 1,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2',
+                    borderColor: 'rgb(255, 99, 132)'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     }).catch( error => {
         resultDiv.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
     });
