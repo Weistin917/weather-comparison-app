@@ -45,3 +45,21 @@ body {
   -webkit-text-stroke: 1px black;
   box-shadow: 3px 3px 3px white;
 }
+
+.result-card {
+  margin-top: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 15px black;
+}
+
+.result-card h5 {
+  font-weight: bold;
+  color: black;
+  -webkit-text-stroke: .5px rgb(255, 9, 9);
+}
+
+.result-card p {
+  color: black;
+  -webkit-text-stroke: .5px rgb(255, 9, 9);
+}
